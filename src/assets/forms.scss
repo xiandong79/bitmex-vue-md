@@ -1,0 +1,123 @@
+form {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex;
+  .form-row {
+    margin-bottom: 20px;
+    flex-basis: 100%;
+    &.half {
+      flex-basis: 49%;
+    }
+    &.form-checkbox {
+      align-items: center;
+      display: flex;
+      > * + * {
+        margin-left: 20px;
+      }
+      input[type="checkbox"] {
+        box-shadow: inset -16px 0 0 0 green;
+        border-radius: 50px;
+        border: 1px solid green;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        transition-duration: 200ms;
+        background-color: #fff;
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        outline: none;
+        height: 24px;
+        width: 40px;
+        &:after {
+          box-shadow: 2px 2px 4px rgba(#000, 0.2);
+          border-radius: 50%;
+          background-color: #fff;
+          position: absolute;
+          height: 21px;
+          width: 21px;
+          left: 1px;
+          top: 1px;
+          content: "";
+        }
+        &:checked {
+          box-shadow: inset 16px 0 0 0 red;
+          border-color: red;
+          &:after {
+            box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
+            left: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 18px;
+    display: block;
+    small {
+      font-size: 55%;
+      opacity: 0.5;
+    }
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea {
+    outline: 0 none;
+    border: 0;
+    border-bottom: 1px solid #303030;
+    font: 500 16px "Roboto";
+    padding: 0 !important;
+    margin: 0 auto 20px;
+    border-radius: 0;
+    color: #303030;
+    background: none;
+    display: block;
+    height: 32px;
+    width: 100%;
+    &:focus {
+      border-bottom: 1px solid blue !important;
+    }
+    &[readonly] {
+      opacity: 0.5;
+      cursor: no-drop;
+    }
+  }
+
+  textarea {
+    padding-top: 0.75em !important;
+    overflow: hidden;
+    min-height: 240px;
+    line-height: 24px;
+    resize: vertical;
+  }
+}
+
+.button {
+  border-radius: 0;
+  font: 500 18px/22px "Roboto";
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  position: relative;
+  background: #303030;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  min-width: 250px;
+  text-decoration: none;
+  outline: none;
+  transition: 0.2s ease;
+  margin: 0;
+  border: 0;
+  &:hover {
+    background: orange;
+    color: #000;
+  }
+}
